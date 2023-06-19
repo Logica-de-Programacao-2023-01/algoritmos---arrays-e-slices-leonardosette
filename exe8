@@ -1,0 +1,33 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	// Cria um slice de strings com tamanho 8
+	s := []string{"valor1", "valor2", "valor3", "valor4", "valor5", "valor6", "valor7", "valor8"}
+
+	// Solicita ao usuário que informe um valor
+	var valor string
+	fmt.Print("Informe um valor: ")
+	fmt.Scan(&valor)
+
+	// Remove todas as ocorrências desse valor no slice
+	novoSlice := removerValor(s, valor)
+
+	// Imprime o resultado
+	fmt.Println(novoSlice)
+}
+
+func removerValor(s []string, valor string) []string {
+	novoSlice := make([]string, 0)
+
+	for _, v := range s {
+		if v != valor {
+			novoSlice = append(novoSlice, v)
+		}
+	}
+
+	return novoSlice
+}
