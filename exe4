@@ -1,0 +1,22 @@
+package main
+
+import "fmt"
+
+/*
+Crie um Slice de inteiros e solicite ao usuário que informe o tamanho do Slice e os valores
+dos elementos. Em seguida, imprima o Slice e a soma dos valores armazenados.
+*/
+func main() {
+
+	var x int
+	var total = 0
+	fmt.Print("digite a quantidade de numeros desejados:")
+	fmt.Scan(&x)
+	numero := make([]int, x)
+	for i := 0; i < len(numero); i++ {
+		fmt.Print("digite um numero:")
+		fmt.Scan(&x)
+		total = x + total
+	}
+	fmt.Print("a soma de todos os elementos:", total)
+}
